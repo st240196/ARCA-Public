@@ -19,5 +19,8 @@ export default defineNuxtConfig({
     public: {
       apiBaseUrl: "http://localhost:3001/api/v1"
     }
+  },
+  nitro: {
+    preset: "node"
   }
 });
