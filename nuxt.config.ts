@@ -1,19 +1,18 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
   ssr: false,
-  spaLoadingTemplate: "./loading.html",
+  components: true,
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
   css: ["@/assets/css/style.css"],
+  
   app: {
-    baseURL: "/"
+    baseURL: "/",
+    keepalive: true
   },
   vite: {
-    plugins: [
-      tailwindcss()
-    ]
+    plugins: [tailwindcss()]
   },
   runtimeConfig: {
     public: {
@@ -21,6 +20,6 @@ export default defineNuxtConfig({
     }
   },
   nitro: {
-    preset: "node"
+    preset: "static"
   }
 });
