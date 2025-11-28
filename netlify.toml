@@ -1,26 +1,24 @@
 [build]
   command = "npm run generate"
-  publish = ".output/public"
+  publish = "dist"
 
 [build.environment]
   NODE_VERSION = "20"
 
 # SPAモード用のリダイレクト設定
-# すべてのルートをindex.htmlにリダイレクトしてクライアントサイドルーティングを有効化
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+  force = false
+  
+# 静的ファイル（画像、CSS、JSなど）は除外
+[[redirects]]
+  from = "/_nuxt/*"
+  to = "/_nuxt/:splat"
+  status = 200
 
-# 本番環境用の環境変数（例）
-# 実際のAPI URLはNetlify Dashboardの Environment variables で設定してください
-# [context.production.environment]
-#   NUXT_PUBLIC_API_BASE_URL = "https://your-production-api.com/api/v1"
-
-# プレビュー環境用の設定（オプション）
-# [context.deploy-preview]
-#   command = "npm run generate"
-
-# ブランチデプロイ用の設定（オプション）
-# [context.branch-deploy]
-#   command = "npm run generate"
+[[redirects]]
+  from = "/favicon.ico"
+  to = "/favicon.ico"
+  status = 200

@@ -7,10 +7,15 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
   css: ["@/assets/css/style.css"],
-  
+
   app: {
     baseURL: "/",
-    keepalive: true
+    keepalive: true,
+    head: {
+      link: [
+        { rel: "icon", type: "image/x-icon", href: "/favicon.ico" }
+      ]
+    }
   },
   vite: {
     plugins: [tailwindcss()]
