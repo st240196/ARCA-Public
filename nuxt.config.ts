@@ -22,7 +22,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      apiBaseUrl: "http://localhost:3001/api/v1"
+      apiBaseUrl: "https://arca-project.240196.workers.dev/api/v1"
     }
   },
   nitro: {
