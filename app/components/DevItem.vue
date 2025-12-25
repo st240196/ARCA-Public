@@ -1,9 +1,9 @@
 <template>
-    <NuxtLink class="relative cursor-pointer hover:opacity-90 aspect-square" :href="`./item?id=${item.id}`">
+    <NuxtLink class="relative cursor-pointer hover:opacity-90 aspect-square" :href="`/item?id=${item.id}`">
         <img :src="item.url" alt="落とし物画像" class="h-full object-cover rounded" />
     </NuxtLink>
     <div class="relative flex flex-col mx-2 w-full">
-        <NuxtLink class="font-bold text-lg w-fit hover:text-gray-500" :href="`./item?id=${item.id}`">{{ item.name }}</NuxtLink>
+        <NuxtLink class="font-bold text-lg w-fit hover:text-gray-500" :href="`/item?id=${item.id}`">{{ item.name }}</NuxtLink>
         <div class="flex flex-row flex-wrap w-fit text-white gap-2 text-xs">
             <a v-for="tag in item.tags" class="px-2 py-1 bg-gray-500/80 rounded-full">{{ tag }}</a>
         </div>
