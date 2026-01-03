@@ -31,7 +31,7 @@
                         <button type="button" class="px-3 py-1.5 bg-blue-500 text-white rounded" @click="addRow">行を追加</button>
                         <div class="ml-auto flex gap-2">
                             <button type="button" class="px-3 py-1 border rounded cursor-pointer hover:bg-gray-300" @click="emit('close')">キャンセル</button>
-                            <button type="submit" class="px-3 py-1.5 bg-green-600 text-white rounded cursor-pointer hover:opacity-80">登録</button>
+                            <button type="submit" id="submit" class="px-3 py-1.5 bg-green-600 text-white rounded cursor-pointer hover:opacity-80">登録</button>
                         </div>
                     </div>
                     <div v-if="error" class="text-sm ml-auto text-red-600">* {{ error }}</div>
@@ -118,6 +118,8 @@ function onRegister() {
     }));
 
 
+    const submitButton = document.querySelector<HTMLButtonElement>("#submit");
+    if (submitButton) submitButton.disabled = true;
     emitRegister(payload);
 }
 
