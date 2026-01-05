@@ -71,7 +71,7 @@ async function bulkRegister(items: RegisterItem[]) {
         // alert(JSON.stringify([...data.entries()], null, 2));
 
         const config = useRuntimeConfig();
-        const res = await fetch(`${config.public.apiBaseUrl}/data`, {
+        await fetch(`${config.public.apiBaseUrl}/data`, {
             method: "POST",
             body: data
         });

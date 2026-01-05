@@ -14,10 +14,18 @@
             <i class="fas fa-fire text-orange-500"></i>
             全ての落とし物
         </h1>
-        <AllItemList class="mb-10" />
+        <div class="mb-6 flex justify-end">
+            <input v-model="searchQuery" type="search" placeholder="検索（タイトル・場所・タグ）" class="w-full max-w-md px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+        <AllItemList :query="searchQuery" class="mb-10" />
     </main>
     <Footer />
 </template>
+<script setup lang="ts">
+import { ref } from "vue";
+
+const searchQuery = ref("");
+</script>
 <style scoped>
 @keyframes gradient-flow {
     0% {
