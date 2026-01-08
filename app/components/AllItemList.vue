@@ -30,6 +30,7 @@ const filteredItems = computed(() => {
         filtered = filtered.filter(item => item.tags.includes(props.query));
     } else if (props.query) {
         filtered = filtered.filter(item =>
+            item.id.toString().includes(props.query!.toLowerCase()) ||
             item.name.toLowerCase().includes(props.query!.toLowerCase()) ||
             item.location.toLowerCase().includes(props.query!.toLowerCase()) ||
             item.tags.some((tag: string) => tag.toLowerCase().includes(props.query!.toLowerCase()))
